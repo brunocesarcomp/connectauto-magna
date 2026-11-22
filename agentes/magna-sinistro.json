@@ -1,0 +1,35 @@
+{
+  "name": "Magna Sinistro",
+  "inbox": "Sinistro (caixa 1)",
+  "model": "z-ai/glm-5.3 (OpenRouter)",
+  "mode": "production",
+  "enabled": true,
+  "http_tools": [
+    "consultar_associado",
+    "buscar_sinistros"
+  ],
+  "native_tools": [
+    "set_custom_attribute",
+    "set_labels",
+    "kanban_move_card",
+    "private_note",
+    "handoff_to_human",
+    "resolve_conversation"
+  ],
+  "kanban": [
+    "Aviso recebido",
+    "Análise documental",
+    "Regulagem do veículo",
+    "Compra de peças",
+    "Transporte de peças",
+    "Reparo em andamento",
+    "Reparo concluído",
+    "Encerrado sem reparo"
+  ],
+  "prompt_file": "../prompts/magna-sinistro.md",
+  "extras": [
+    "Transcrição de voz (STT) com ElevenLabs scribe_v1",
+    "Limite de 30 ferramentas por turno",
+    "Transferência com resumo"
+  ]
+}

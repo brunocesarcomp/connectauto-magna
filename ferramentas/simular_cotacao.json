@@ -1,0 +1,21 @@
+{
+  "name": "simular_cotacao",
+  "method": "GET",
+  "urlTemplate": "/v1/crm/cotacao",
+  "allowedHosts": [
+    "api.hackathon.fazer.ai"
+  ],
+  "auth": "Bearer no cabeçalho Authorization (Cofre 'Magna')",
+  "description": "Calcula a mensalidade e a adesão de um plano para o veículo do cliente. Não registra nada. Use SEMPRE antes de falar qualquer valor em reais — nunca invente preço. Só cote depois de entender a necessidade do cliente e escolher o plano adequado. Códigos de plano: bronze, prata, ouro, diamante. Exemplo: plano=ouro, placa=ABC1D23.",
+  "inputSchema": {
+    "placa": "Placa do veículo, sem traço",
+    "plano": "Código do plano: bronze, prata, ouro ou diamante"
+  },
+  "query": {
+    "placa": "{{placa}}",
+    "plano": "{{plano}}"
+  },
+  "expectedStatuses": [
+    404
+  ]
+}

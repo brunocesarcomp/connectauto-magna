@@ -1,0 +1,34 @@
+{
+  "name": "Magna Assistência",
+  "inbox": "Assistência 24h (caixa 2)",
+  "model": "z-ai/glm-5.3 (OpenRouter)",
+  "mode": "production",
+  "enabled": true,
+  "http_tools": [
+    "consultar_associado",
+    "consultar_cobertura"
+  ],
+  "native_tools": [
+    "set_custom_attribute",
+    "set_labels",
+    "kanban_move_card",
+    "private_note",
+    "handoff_to_human",
+    "resolve_conversation"
+  ],
+  "kanban": [
+    "Contato recebido",
+    "Consulta de cadastro e cobertura",
+    "Coleta dos dados do serviço",
+    "Pronto para transferência",
+    "Com o consultor",
+    "Orientação de reembolso",
+    "Atendimento concluído",
+    "Encerrado sem cobertura"
+  ],
+  "prompt_file": "../prompts/magna-assistencia.md",
+  "extras": [
+    "Limite de 30 ferramentas por turno",
+    "Transferência com resumo"
+  ]
+}

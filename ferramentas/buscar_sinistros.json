@@ -1,0 +1,23 @@
+{
+  "name": "buscar_sinistros",
+  "method": "GET",
+  "urlTemplate": "/v1/sinistros",
+  "allowedHosts": [
+    "api.hackathon.fazer.ai"
+  ],
+  "auth": "Bearer no cabeçalho Authorization (Cofre 'Magna')",
+  "description": "Busca os sinistros (batidas, roubos, incêndios) de um associado. Retorna a lista com protocolo, tipo e fase atual. Use quando o cliente perguntar sobre o andamento do conserto ou do caso e você ainda não souber o protocolo. Informe cpf (11 números), placa (ex.: ABC1D23) ou protocolo (ex.: SIN-2026-00003). Exemplo: cpf=00000000000.",
+  "inputSchema": {
+    "cpf": "CPF do associado, só números, 11 dígitos",
+    "placa": "Placa do veículo, sem traço",
+    "protocolo": "Protocolo do sinistro, formato SIN-2026-00000"
+  },
+  "query": {
+    "cpf": "{{cpf}}",
+    "placa": "{{placa}}",
+    "protocolo": "{{protocolo}}"
+  },
+  "expectedStatuses": [
+    404
+  ]
+}

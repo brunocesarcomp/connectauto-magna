@@ -1,0 +1,21 @@
+{
+  "name": "consultar_cobertura",
+  "method": "GET",
+  "urlTemplate": "/v1/assistencia/cobertura",
+  "allowedHosts": [
+    "api.hackathon.fazer.ai"
+  ],
+  "auth": "Bearer no cabeçalho Authorization (Cofre 'Magna')",
+  "description": "Verifica se o plano do associado cobre um serviço de assistência 24h (guincho, chaveiro, pneu, pane seca etc.). Retorna se é coberto, motivos quando não é (inadimplência, carência), limite de km do guincho e os campos obrigatórios que o chamado precisa. Use SEMPRE antes de dizer ao cliente se o serviço está coberto. Informe cpf (11 números) e o código do serviço. Exemplo: cpf=00000000000, servico=guincho_pane.",
+  "inputSchema": {
+    "cpf": "CPF do associado, só números, 11 dígitos",
+    "servico": "Código do serviço de assistência, ex.: guincho_pane"
+  },
+  "query": {
+    "cpf": "{{cpf}}",
+    "servico": "{{servico}}"
+  },
+  "expectedStatuses": [
+    404
+  ]
+}

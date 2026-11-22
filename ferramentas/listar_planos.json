@@ -1,0 +1,15 @@
+{
+  "name": "listar_planos",
+  "method": "GET",
+  "urlTemplate": "/v1/crm/planos",
+  "allowedHosts": [
+    "api.hackathon.fazer.ai"
+  ],
+  "auth": "Bearer no cabeçalho Authorization (Cofre 'Magna')",
+  "description": "Lista os planos da Magna (códigos, coberturas, o que não cobre, assistência 24h, carro reserva, cobertura de terceiros). Use antes de explicar ou comparar planos para o cliente. Não precisa de nenhum dado.",
+  "inputSchema": {},
+  "query": {},
+  "expectedStatuses": [
+    404
+  ]
+}

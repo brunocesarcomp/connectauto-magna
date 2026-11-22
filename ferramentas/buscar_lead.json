@@ -1,0 +1,25 @@
+{
+  "name": "buscar_lead",
+  "method": "GET",
+  "urlTemplate": "/v1/crm/leads",
+  "allowedHosts": [
+    "api.hackathon.fazer.ai"
+  ],
+  "auth": "Bearer no cabeçalho Authorization (Cofre 'Magna')",
+  "description": "Busca uma pessoa na base de interessados (leads) da Magna. Retorna nome, veículo, ano, cidade, status e o histórico de contatos anteriores (o que já foi conversado, objeções). Use no início do atendimento de vendas, assim que tiver placa, cpf, telefone ou nome, para saber se a pessoa já foi atendida antes. Exemplo: placa=ABC1D23.",
+  "inputSchema": {
+    "cpf": "CPF, só números, 11 dígitos",
+    "nome": "Nome da pessoa",
+    "placa": "Placa do veículo, sem traço",
+    "telefone": "Telefone só números, com DDD"
+  },
+  "query": {
+    "cpf": "{{cpf}}",
+    "nome": "{{nome}}",
+    "placa": "{{placa}}",
+    "telefone": "{{telefone}}"
+  },
+  "expectedStatuses": [
+    404
+  ]
+}

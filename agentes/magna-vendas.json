@@ -1,0 +1,37 @@
+{
+  "name": "Magna Vendas",
+  "inbox": "Vendas (caixa 3)",
+  "model": "z-ai/glm-5.3 (OpenRouter)",
+  "mode": "production",
+  "enabled": true,
+  "http_tools": [
+    "buscar_lead",
+    "listar_planos",
+    "simular_cotacao"
+  ],
+  "native_tools": [
+    "set_custom_attribute",
+    "set_labels",
+    "kanban_move_card",
+    "private_note",
+    "handoff_to_human",
+    "resolve_conversation"
+  ],
+  "kanban": [
+    "Lead novo",
+    "Diagnóstico",
+    "Proposta apresentada",
+    "Tratamento de objeção",
+    "Aguardando resposta",
+    "Continuação agendada",
+    "Com o vendedor",
+    "Contratação encaminhada",
+    "Encerrado sem contratação"
+  ],
+  "prompt_file": "../prompts/magna-vendas.md",
+  "extras": [
+    "Limite de 30 ferramentas por turno",
+    "Regra de eficiência (responder antes de registrar)",
+    "Transferência com resumo"
+  ]
+}

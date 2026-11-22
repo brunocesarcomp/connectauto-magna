@@ -1,0 +1,21 @@
+{
+  "name": "consultar_associado",
+  "method": "GET",
+  "urlTemplate": "/v1/associados",
+  "allowedHosts": [
+    "api.hackathon.fazer.ai"
+  ],
+  "auth": "Bearer no cabeçalho Authorization (Cofre 'Magna')",
+  "description": "Consulta se a pessoa é associada da Magna. Retorna plano, situação de pagamento (adimplente ou inadimplente), dias de atraso, carências em aberto, veículo e mensalidade. Use SEMPRE antes de afirmar qualquer coisa sobre o plano ou a situação do cliente. Informe cpf (11 números, sem pontos) ou placa (ex.: ABC1D23). Se não encontrar (404), a pessoa não é associada. Exemplo: cpf=00000000000.",
+  "inputSchema": {
+    "cpf": "CPF do cliente, só números, 11 dígitos",
+    "placa": "Placa do veículo, sem traço. Ex.: ABC1D23"
+  },
+  "query": {
+    "cpf": "{{cpf}}",
+    "placa": "{{placa}}"
+  },
+  "expectedStatuses": [
+    404
+  ]
+}
